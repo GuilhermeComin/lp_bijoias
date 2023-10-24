@@ -340,6 +340,15 @@ nav.show ul li {
   justify-content: center;
 }
 
+#about .about .icones .icone {
+  display: flex;
+  justify-content: center;
+}
+
+#about .about .icones img {
+  width: 3.75rem;
+}
+
 #about .image,
 #about .image::before {
   border-radius: 0.25rem;
@@ -349,6 +358,10 @@ nav.show ul li {
 
 #signup .title {
   font-size: 1.5rem;
+}
+
+#signup .title img {
+  width: 3rem;
 }
 
 #signup .lista {
@@ -361,10 +374,55 @@ nav.show ul li {
   font-weight: 600;
 }
 
+#signup .signup-parte1 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+#signup .title2 {
+  text-align: center;
+}
+
+#signup .title2 h2 {
+  font-size: 3rem;
+  line-height: 3.5rem;
+}
+
+#signup .title2 span {
+  color: var(--base-color);
+  font-weight: 500;
+}
+
+#signup .title2 small {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--base-color);
+  display: block;
+  line-height: 1rem;
+}
+
+#signup .cadastre-se {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#signup .cadastre-se a.button {
+  justify-content: center;
+}
+
 /*=========== TESTIMONIALS ========================= */
 
 #testimonials {
   background: hsl(0 0% 98%);
+}
+
+#testimonials .swiper-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
 }
 
 #testimonials blockquote {
@@ -391,8 +449,10 @@ nav.show ul li {
 
 #testimonials cite {
   display: flex;
+  flex-direction: column;
   align-items: center;
   font-style: normal;
+  text-align: center;
 }
 
 #testimonials cite img {
@@ -420,7 +480,7 @@ nav.show ul li {
 }
 
 #contact i.icon-whatsapp {
-  color: blue;
+  color: white;
   margin-right: 0.625rem;
 }
 
@@ -430,17 +490,185 @@ nav.show ul li {
   margin-bottom: 4rem;
 }
 
-/*=========== SWIPER ========================= */
-.swiper-slide {
-  height: auto;
-  padding: 4rem 1rem;
+#contact .container.grid {
+  justify-items: center;
 }
 
-.swiper-pagination-bullet {
-  width: 0.75rem;
-  height: 0.75rem;
+#contact .data {
+  color: var(--text-color);
+  transition: all 0.2s;
 }
 
-.swiper-pagination-bullet-active {
+#contact .data:hover {
+  color: var(--base-color-alt);
+}
+
+#footer {
+  height: 3rem;
   background-color: var(--base-color);
+  width: 100%;
+  padding: 0;
 }
+
+/*========= MEDIA QUERIES =========*/
+/* extra large devices: 1200 > */
+@media (min-width: 1200px) {
+  /* reusable classes */
+  .container {
+    max-width: 1120px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section {
+    padding: 5rem 0;
+  }
+
+  .section#home {
+    padding: 8rem 0 5rem;
+  }
+
+  .section header,
+  #testimonials header {
+    max-width: 32rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .button {
+    height: 2rem;
+    width: 70%;
+    margin: 0.5rem auto 0;
+  }
+
+  /* navigation */
+  nav .menu {
+    opacity: 1;
+    visibility: visible;
+    top: 0;
+  }
+
+  nav .menu ul {
+    display: flex;
+    gap: 2rem;
+  }
+
+  nav .menu ul li a.title {
+    font: 400 1rem var(--body-font);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  nav .menu ul li a.title.active {
+    font-weight: bold;
+    -webkit-font-smoothing: auto;
+  }
+
+  nav .icon-menu {
+    display: none;
+  }
+
+  /* layout */
+  main {
+    margin-top: var(--header-height);
+  }
+
+  #header .logo {
+    width: 20%
+  }
+
+  /* home */
+  #home .container {
+    grid-auto-flow: column;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+
+  #home .image {
+    order: 1;
+  }
+
+  #home .text {
+    order: 0;
+    max-width: 24rem;
+    text-align: left;
+  }
+
+  /* about */
+  #about .container {
+    margin: 0 auto;
+    grid-auto-flow: column;
+  }
+
+  #about .about {
+    padding: 2rem 0 0;
+  }
+
+  #about .icones.grid {
+    grid-template-columns: 1fr 1fr;
+    margin-top: 2rem;
+  }
+
+  /* signup */
+  #signup .signup-parte1 {
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 0;
+  }
+
+  #signup .container.grid {
+    gap: 4rem;
+  }
+
+  #signup h2.title {
+    text-align: center;
+  }
+
+  /* testimonials */
+  #testimonials .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #testimonials .swiper-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+
+  #testimonials .swiper-slide blockquote{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 380px;
+  }
+
+  /* contact */
+  #contact .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 25px minmax(0, 1fr);
+    grid-auto-flow: column;
+    align-items: center;
+  }
+
+  #contact .text {
+    max-width: 25rem;
+  }
+
+  #contact .contatos {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+  }
+
+}
+/* large devices: 1023 > */
+/* large devices: 992 > */
+@media (min-width: 992px) {
+  :root {
+    --title-font-size: 2.25rem;
+    --subtitle-font-size: 1.125rem;
+  }
+}
+/* medium devices: 767 > */
